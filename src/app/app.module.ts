@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { AboutMePageComponent } from './about-me-page/about-me-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { ProductionPageComponent } from './production-page/production-page.component';
+import { ProductionService } from "./services/production-service.service";
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes: Routes = [
   {path: '', component: HomePageComponent},
@@ -24,9 +26,10 @@ const appRoutes: Routes = [
       appRoutes,
       {enableTracing: true}
     ),
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ProductionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
